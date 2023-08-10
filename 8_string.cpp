@@ -3,10 +3,9 @@ using namespace std;
 
 int main()
 {
-    string s = "abc";
-    cout<<s.length();
+    string s = "abcdef";
     
-    // cout << arr;
-
+    cout<<s.substr(2);
+    
     return 0;
 }
