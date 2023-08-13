@@ -2,6 +2,11 @@
     "files.associations": {
         "cmath": "cpp",
         "iostream": "cpp",
-        "cstring": "cpp"
-    }
+        "cstring": "cpp",
+        "string": "cpp"
+    },
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.python"
+    },
+    "python.formatting.provider": "none"
 }
