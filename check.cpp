@@ -4,24 +4,27 @@
 
 using namespace std;
 
-class Car {
-    private:
-        string brand;
-        double fuelConsumption;
+class Car
+{
+private:
+    string brand;
+    double fuelConsumption;
 
-    public:
-        Car(string b, double fc) : brand(b), fuelConsumption(fc) {}
+public:
+    Car(string b, double fc) : brand(b), fuelConsumption(fc) {}
 
-        friend double calculateFuelCost(const Car& car, double distance, double fuelPrice);
+    friend double calculateFuelCost(const Car &car, double distance, double fuelPrice);
 };
 
-double calculateFuelCost(const Car& car, double distance, double fuelPrice) {
+double calculateFuelCost(const Car &car, double distance, double fuelPrice)
+{
     double fuelNeeded = (car.fuelConsumption * distance) / 100.0;
     double totalCost = fuelNeeded * fuelPrice;
     return totalCost;
 }
 
-int main() {
+int main()
+{
     string brand;
     double fuelConsumption, distance, fuelPrice;
 
