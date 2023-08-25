@@ -1,49 +1,37 @@
 #include <iostream>
-#include <vector>
-#include <algorithm>
+#include <iomanip>
+#include <string>
 
 using namespace std;
 
-int maxArea(vector<int> &height)
-{
-    int left = 0;
-    int right = height.size() - 1;
-    int maxWater = 0;
+class Car {
+    private:
+        string brand;
+        double fuelConsumption;
 
-    while (left < right)
-    {
-        int h = min(height[left], height[right]);
-        int w = right - left;
-        maxWater = max(maxWater, h * w);
+    public:
+        Car(string b, double fc) : brand(b), fuelConsumption(fc) {}
 
-        if (height[left] < height[right])
-        {
-            left++;
-        }
-        else
-        {
-            right--;
-        }
-    }
+        friend double calculateFuelCost(const Car& car, double distance, double fuelPrice);
+};
 
-    return maxWater;
+double calculateFuelCost(const Car& car, double distance, double fuelPrice) {
+    double fuelNeeded = (car.fuelConsumption * distance) / 100.0;
+    double totalCost = fuelNeeded * fuelPrice;
+    return totalCost;
 }
 
-int main()
-{
-    int n;
-    cout << "Enter the number of lines: ";
-    cin >> n;
+int main() {
+    string brand;
+    double fuelConsumption, distance, fuelPrice;
 
-    vector<int> height(n);
-    cout << "Enter the heights of the lines:\n";
-    for (int i = 0; i < n; ++i)
-    {
-        cin >> height[i];
-    }
+    getline(cin, brand);
+    cin >> fuelConsumption >> distance >> fuelPrice;
 
-    int result = maxArea(height);
-    cout << "Maximum amount of water that can be stored: " << result << endl;
+    Car car(brand, fuelConsumption);
+    double fuelCost = calculateFuelCost(car, distance, fuelPrice);
+
+    cout << fixed << setprecision(2) << fuelCost << endl;
 
     return 0;
 }

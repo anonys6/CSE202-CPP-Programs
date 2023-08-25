@@ -30,12 +30,12 @@ int main() {
     int n, k;
     cout << "Enter the size of the vector: ";
     cin >> n;
-    cout << "Enter the vector elements: ";
+    cout << "nums[] = ";
     vector<int> nums(n);
     for (int i = 0; i < n; i++) {
         cin >> nums[i];
     }
-    cout << "Enter k: ";
+    cout << "k = ";
     cin >> k;
 
     int kthLargest = kthLargestSum(nums, k);
