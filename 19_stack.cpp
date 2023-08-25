@@ -1,34 +1,45 @@
 #include <iostream>
-#include <iomanip>
+#include <vector>
+#include <queue>
 using namespace std;
 
-void bubbleSort(float arr[], int n) {
-    for (int i = 0; i < n-1; i++) {
-        for (int j = 0; j < n-i-1; j++) {
-            if (arr[j] > arr[j+1]) {
-                swap(arr[j], arr[j+1]);
+int kthLargestSum(vector<int>& nums, int k) {
+    priority_queue<int, vector<int>, greater<int>> pq;
+
+    vector<int> sum(nums.size() + 1, 0);
+    for (int i = 1; i <= nums.size(); i++) {
+        sum[i] = sum[i - 1] + nums[i - 1];
+    }
+
+    for (int i = 1; i <= nums.size(); i++) {
+        for (int j = i; j <= nums.size(); j++) {
+            int subarraySum = sum[j] - sum[i - 1];
+            if (pq.size() < k || subarraySum > pq.top()) {
+                pq.push(subarraySum);
+                if (pq.size() > k) {
+                    pq.pop();
+                }
             }
         }
-        cout << "After iteration " << i+1 << ": ";
-        for (int k = 0; k < n; k++) {
-            cout << fixed << setprecision(2) << arr[k] << " ";
-        }
-        cout << endl;
     }
+
+    return pq.top();
 }
 
 int main() {
-    int n;
+    int n, k;
+    cout << "Enter the size of the vector: ";
     cin >> n;
-    float arr[n];
+    cout << "Enter the vector elements: ";
+    vector<int> nums(n);
     for (int i = 0; i < n; i++) {
-        cin >> arr[i];
+        cin >> nums[i];
     }
-    bubbleSort(arr, n);
-    cout << "Sorted array: ";
-    for (int i = 0; i < n; i++) {
-        cout << fixed << setprecision(2) << arr[i] << " ";
-    }
-    cout << endl;
+    cout << "Enter k: ";
+    cin >> k;
+
+    int kthLargest = kthLargestSum(nums, k);
+    cout << "Kth largest sum: " << kthLargest << endl;
+
     return 0;
 }
