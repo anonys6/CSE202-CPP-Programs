@@ -7,11 +7,21 @@ struct Node {
     Node* next;
 };
 
-void insert_at_begin(Node **head_ref, int val) {
+void at_the_end(Node** head_ref, int val) {
     Node* newNode = (Node*) malloc(sizeof(Node));
-    newNode->data = val;
-    newNode->next = *head_ref;
-    *head_ref = newNode;
+    Node* last = *head_ref;
+    newNode -> data = val;
+    newNode -> next = NULL;
+
+    if (*head_ref == NULL) {
+        *head_ref = newNode;
+        return ;
+    } else {
+        while(last->next != NULL) {
+            last = last->next;
+        }
+        last->next = newNode;
+    }
 }
 
 void print_list(Node* head) {
@@ -22,7 +32,9 @@ void print_list(Node* head) {
     }
 }
 
-int main() {
+
+int main()
+{
     int n;
     cin >> n;
 
@@ -31,10 +43,10 @@ int main() {
     for (int i = 0; i < n; i++) {
         int val;
         cin >> val;
-        insert_at_begin(&head, val);
+        at_the_end(&head, val);
     }
 
     print_list(head);
-
+    
     return 0;
 }
