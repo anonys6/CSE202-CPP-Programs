@@ -3,7 +3,8 @@
         "cmath": "cpp",
         "iostream": "cpp",
         "cstring": "cpp",
-        "string": "cpp"
+        "string": "cpp",
+        "ostream": "cpp"
     },
     "[python]": {
         "editor.defaultFormatter": "ms-python.python"

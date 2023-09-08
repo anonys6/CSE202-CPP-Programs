@@ -1,88 +1,32 @@
-#include <bits/stdc++.h>
+#include <iostream>
 
 using namespace std;
 
-string ltrim(const string &);
-string rtrim(const string &);
-vector<string> split(const string &);
+struct Node {
+    int data;
+    struct Node* next;
+};
 
-/*
- * Complete the 'miniMaxSum' function below.
- *
- * The function accepts INTEGER_ARRAY arr as parameter.
- */
+void insertAtEnd(struct Node** head, int value) {
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+    newNode->data = value;
+    newNode->next = NULL;
 
-void miniMaxSum(vector<int> arr)
-{
-    void miniMaxSum(vector<int> arr)
-    {
-        sort(arr.begin(), arr.end());
-
-        long long minSum = accumulate(arr.begin(), arr.begin() + 4, 0LL);
-        long long maxSum = accumulate(arr.begin() + 1, arr.end(), 0LL);
-
-        cout << minSum << " " << maxSum << endl;
-    }
-
-    int main()
-    {
-
-        string arr_temp_temp;
-        getline(cin, arr_temp_temp);
-
-        vector<string> arr_temp = split(rtrim(arr_temp_temp));
-
-        vector<int> arr(5);
-
-        for (int i = 0; i < 5; i++)
-        {
-            int arr_item = stoi(arr_temp[i]);
-
-            arr[i] = arr_item;
+    if (*head == NULL) {
+        *head = newNode;
+    } else {
+        struct Node* current = *head;
+        while (current->next != NULL) {
+            current = current->next;
         }
-
-        miniMaxSum(arr);
-
-        return 0;
+        current->next = newNode;
     }
+}
 
-    string ltrim(const string &str)
-    {
-        string s(str);
-
-        s.erase(
-            s.begin(),
-            find_if(s.begin(), s.end(), not1(ptr_fun<int, int>(isspace))));
-
-        return s;
-    }
-
-    string rtrim(const string &str)
-    {
-        string s(str);
-
-        s.erase(
-            find_if(s.rbegin(), s.rend(), not1(ptr_fun<int, int>(isspace))).base(),
-            s.end());
-
-        return s;
-    }
-
-    vector<string> split(const string &str)
-    {
-        vector<string> tokens;
-
-        string::size_type start = 0;
-        string::size_type end = 0;
-
-        while ((end = str.find(" ", start)) != string::npos)
-        {
-            tokens.push_back(str.substr(start, end - start));
-
-            start = end + 1;
-        }
-
-        tokens.push_back(str.substr(start));
-
-        return tokens;
-    }
+int main() {
+    struct Node* head = NULL;
+    insertAtEnd(&head, 5);
+    insertAtEnd(&head, 10);
+    cout << head->next->data;
+    return 0;
+}
