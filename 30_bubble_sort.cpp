@@ -3,21 +3,15 @@
 using namespace std;
 
 void bubble_sort(int arr[], int n) {
-    bool swapped;
 
-    for (int i = 0; i < 4; i++)
-    {
-        for (int j = 0; j < 5 - i; j++)
-        {
-            if (arr[j] > arr[j + 1])
-            {
-                int temp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i; j++) {
+            if (arr[j] > arr[j + 1]) {
+                swap(arr[j], arr[j + 1]);
             }
         }
 
-        for (int k = 0; k < 5; k++) {
+        for (int k = 0; k < n; k++) {
             cout << arr[k] << " ";
         }
         cout << endl;
@@ -30,6 +24,7 @@ int main()
 
     bubble_sort(arr, 5);
 
+    cout << endl << "Bubble Sort" << endl;
     for (int j = 0; j < 5; j++) {
         cout << arr[j] << " ";
     }

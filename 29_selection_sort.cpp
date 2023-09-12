@@ -1,15 +1,14 @@
 #include <iostream>
-#include <vector>
 
 using namespace std;
 
 void selection_sort(int arr[], int n) {
-    int i, j, min;
+    int min;
 
-    for (i = 0; i < n - 1; i++) {
+    for (int i = 0; i < n - 1; i++) {
         min = i;
 
-        for(j = i + 1; j < n; j++) {
+        for(int j = i + 1; j < n; j++) {
             if (arr[j] < arr[min]) {
                 min = j;
             }
