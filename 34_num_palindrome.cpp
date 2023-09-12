@@ -1,50 +1,33 @@
 #include <iostream>
-#include <string>
-#include <algorithm>
 
 using namespace std;
 
-int main()
-{
-
-    int N;
-    cin >> N;
+int main() {
+    int num;
+    cout << "Enter a number: ";
+    cin >> num;
 
     int sum = 0;
-    while (N > 0)
-    {
-        int rem = N % 10;
-        sum = sum + rem;
-        N = N / 10;
+
+    while (num > 0) {
+        int rem = num % 10;
+        sum = sum = rem;
+        num = num / 10;
     }
 
     int temp = sum;
+    int reverse = 0;
 
-    int reversed = 0;
-
-    while (sum > 0)
-    {
-        int digit = sum % 10;
-        reversed = reversed * 10 + digit;
+    while (sum > 0) {
+        int rem = sum % 10;
+        reverse = reverse * 10 + rem;
         sum = sum / 10;
     }
 
-    // if (temp == reversed)
-    // {
-    //     return 1;
-    // }
-    // else
-    // {
-    //     return 0;
-    // }
-
-    if (temp == reversed)
-    {
-        cout << 1;
-    }
-    else
-    {
-        cout << 0;
+    if (reverse == temp) {
+        cout << "Number sum is palindrome";
+    } else {
+        cout << "Number sum is not palindrome";
     }
 
     return 0;
