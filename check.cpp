@@ -1,32 +1,29 @@
 #include <iostream>
-
 using namespace std;
 
-struct Node {
-    int data;
-    struct Node* next;
+class course
+{
+    int x, y;
+
+public:
+    void Initialize(int xx)
+    {
+        x = ++xx;
+    }
+
+    void Display()
+    {
+        cout << --x << " ";
+    }
 };
 
-void insertAtEnd(struct Node** head, int value) {
-    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
-    newNode->data = value;
-    newNode->next = NULL;
-
-    if (*head == NULL) {
-        *head = newNode;
-    } else {
-        struct Node* current = *head;
-        while (current->next != NULL) {
-            current = current->next;
-        }
-        current->next = newNode;
-    }
-}
-
-int main() {
-    struct Node* head = NULL;
-    insertAtEnd(&head, 5);
-    insertAtEnd(&head, 10);
-    cout << head->next->data;
+int main()
+{
+    course obj;
+    obj.Initialize(20);
+    obj.Display();
+    int* p = (int*)&obj;
+    *p = 5;
+    obj.Display();
     return 0;
 }
