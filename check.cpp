@@ -18,7 +18,11 @@ int main()
             break;
         }
         for (int j = 0; j < 26; j++) {
-            ans[i] = ch;
+            if (!isalpha(ch)) {
+                continue;
+            } else {
+                ans[i] = ch;
+            }
             if (ans[i] == text[i]) {
                 cout << ans << endl;
                 break;
