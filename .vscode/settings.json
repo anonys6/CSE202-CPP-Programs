@@ -4,7 +4,8 @@
         "iostream": "cpp",
         "cstring": "cpp",
         "string": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "fstream": "cpp"
     },
     "[python]": {
         "editor.defaultFormatter": "ms-python.python"

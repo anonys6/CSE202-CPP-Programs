@@ -18,6 +18,8 @@ int main() {
         myFile << str << endl;
     }
 
+    myFile.close();
+
     cout << "Data appended successfully" << endl;
 
     return 0;
