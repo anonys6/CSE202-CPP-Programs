@@ -1,0 +1,2 @@
+Sum successfully written to the file 'sum.txt'.
+Sum: 7
