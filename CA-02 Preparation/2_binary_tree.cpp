@@ -126,26 +126,23 @@ struct node{
  
  
 node *create(int val){
-node *newnode =  new node();
-if(!newnode){
- 	return 0;
+	node *newnode =  new node();
+	if(!newnode){
+		return 0;
+	} else {
+		newnode->data = val;
+		newnode->left = newnode->right = NULL;
+		return newnode;
 	}
-else{
-	newnode->data = val;
-	newnode->left = newnode->right = 0;
-	return newnode;
-}
 }
 
 node *insert(node *root,int val){
 	if(root == NULL){
 		return create(val);
-	}
-	else{
+	} else{
 		if(val<root->data){
 			root->left = insert(root->left,val);
-		}
-		else{
+		} else{
 			root->right = insert(root->right,val);
 		}
 		return root;

@@ -58,8 +58,8 @@ int toh(int n, char rodA, char rodC, char rodB) {
     moves = moves + toh(n - 1, rodA, rodB, rodC);
 
     cout << "Move disk " << n << " from " << rodA << " to " << rodC << endl;
-
     moves++;
+    
     moves = moves + toh(n - 1, rodB, rodC, rodA);
 
     return moves;
