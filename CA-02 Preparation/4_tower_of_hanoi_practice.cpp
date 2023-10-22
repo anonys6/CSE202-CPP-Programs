@@ -54,14 +54,12 @@ int toh(int n, char rodA, char rodC, char rodB) {
     }
 
     int moves = 0;
-
     moves = moves + toh(n - 1, rodA, rodB, rodC);
 
     cout << "Move disk " << n << " from " << rodA << " to " << rodC << endl;
     moves++;
     
     moves = moves + toh(n - 1, rodB, rodC, rodA);
-
     return moves;
 }
 
@@ -80,4 +78,19 @@ int main() {
     cout << "Total number of moves: " << moves << endl;
 
     return 0;
+}
+
+int tower_of_hanoi(int n, char a, char c, char b) {
+    if (n == 1) {
+        cout << "Move disk " << n <<" from " << a << " to " << c << endl;
+    }
+
+    int moves = 0;
+    moves = moves + tower_of_hanoi(n - 1, a, c, b);
+
+    cout << "Move disk " << n << " from disk " << a << " to " << c << endl;
+    moves++;
+
+    moves = moves + tower_of_hanoi(n - 1, b, c, a);
+    return moves;
 }

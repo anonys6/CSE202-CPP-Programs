@@ -1,39 +1,22 @@
 #include <iostream>
-
 using namespace std;
 
-int main()
-{
-    string text = "hello world";
+class A {
+public:
+    string x;
+    A() { x = "Hello"; cout << x << " "; }
+    ~A() { x += " World"; cout << x << " "; }
+};
 
-    char ans[12];
+class B : public A {
+public:
+    string y;
+    B() { y = "C++"; cout << y << " "; }
+    ~B() { y = "Welcome"; cout << y << " "; }
+};
 
-    for (int i = 0; i < text.length(); i++) {
-        if (text[i] == ' ') {
-            ans[i] = ' ';
-            continue;
-        }
-        char ch = 'a';
-        if (ans == text) {
-            break;
-        }
-        for (int j = 0; j < 26; j++) {
-            if (!isalpha(ch)) {
-                continue;
-            } else {
-                ans[i] = ch;
-            }
-            if (ans[i] == text[i]) {
-                cout << ans << endl;
-                break;
-            } else {
-                cout << ans << endl;
-            }
-            ch++;
-        }
-    }
-
-    cout << ans << endl;
-    
+int main() {
+    B obj;
+    cout << obj.x << " " << obj.y << endl;
     return 0;
 }
