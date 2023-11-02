@@ -1,4 +1,7 @@
-is below code robust now?
+/*
+    Reg No: 12203273, Name: Md Shakib Alam, Section: K22SK, Roll NO: 67
+*/
+
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -18,6 +21,7 @@ int readers_count = 0;
 // reader thread function
 void *reader(void *arg) {
     int id = *(int *)arg;
+    
     while (1) {
         // acquire read lock
         pthread_mutex_lock(&mutex);
@@ -41,6 +45,7 @@ void *reader(void *arg) {
         // sleep for some time
         usleep(rand() % 1000000);
     }
+    
     return NULL;
 }
 
@@ -61,10 +66,12 @@ void *writer(void *arg) {
         // sleep for some time
         usleep(rand() % 1000000);
     }
+    
     return NULL;
 }
 
 int main() {
+    
     // initialize synchronization mechanisms
     if (sem_init(&rw_sem, 0, 1) != 0) {
         perror("Semaphore initialization failed");
@@ -100,6 +107,7 @@ int main() {
             exit(EXIT_FAILURE);
         }
     }
+    
     for (int i = 0; i < 2; i++) {
         if (pthread_join(writers[i], NULL) != 0) {
             perror("Writer thread join failed");
@@ -112,6 +120,7 @@ int main() {
         perror("Semaphore destruction failed");
         exit(EXIT_FAILURE);
     }
+    
     if (pthread_mutex_destroy(&mutex) != 0) {
         perror("Mutex destruction failed");
         exit(EXIT_FAILURE);
@@ -119,3 +128,4 @@ int main() {
 
     return 0;
 }
+
