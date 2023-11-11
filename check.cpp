@@ -1,21 +1,22 @@
 #include <iostream>
-#include <string>
 using namespace std;
-class A{
-	int a;
-   public:
-	virtual void func() = 0;
-};
- 
-class B: public A{
-   public:
-	void func(){
-		cout << "Awesome" << endl;
-	}	
-};
- 
-int main(){
-	A a;
-	a.func();
-	return 0;
+
+void foo() {
+    try {
+        throw runtime_error("Exception!");
+    }
+    catch (const exception& e) {
+        cout << "Caught exception: " << e.what() << endl;
+        throw;
+    }
+}
+
+int main() {
+    try {
+        foo();
+    }
+    catch (const exception& e) {
+        cout << "Caught rethrown exception: " << e.what() << endl;
+    }
+    return 0;
 }
