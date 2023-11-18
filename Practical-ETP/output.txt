@@ -1,7 +1,5 @@
-6 3 4 9 7 
-3 4 6 7 9 
-4 3 7 9 6 
-Largest element: 9
-Smallest element: 3
-Found
-3 6 7 9 
+Print queue: 6 3 9 7 4 
+Front element: 6
+Back element: 4
+Size of the queue: 5
+After popping two element: 9 7 4 
