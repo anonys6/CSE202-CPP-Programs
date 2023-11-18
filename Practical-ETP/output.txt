@@ -1,1 +1,6 @@
-2 3 5 7 1 
+2 1 4 5 7 
+1 2 4 5 7 
+1 7 5 4 2 
+Largest element: 7
+Smallest element: 1
+Not found
