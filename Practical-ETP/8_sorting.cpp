@@ -15,12 +15,14 @@ void bubbleSort(vector<int> &arr) {
                 swapped = true;
             }
         }
+        
         // If no swapping happened, then the array is already sorted
         if (!swapped) {
             break;
         }
     }
 }
+
 
 // Selection sort
 void selectionSort(vector<int> &arr) {
@@ -38,6 +40,7 @@ void selectionSort(vector<int> &arr) {
     }
 }
 
+
 // Insertion sort
 void insertionSort(vector<int> &arr) {
     int n = arr.size();
@@ -53,6 +56,7 @@ void insertionSort(vector<int> &arr) {
         arr[j + 1] = key;
     }
 }
+
 
 // Merge sort
 void merge(vector<int> &arr, int l, int m, int r) {
@@ -99,6 +103,7 @@ void mergeSort(vector<int> &arr, int l, int r) {
     }
 }
 
+
 // Quick sort
 int partition(vector<int> &arr, int l, int r) {
     int pivot = arr[r]; // Pivot element
@@ -122,6 +127,7 @@ void quickSort(vector<int> &arr, int l, int r) {
         quickSort(arr, pi + 1, r);
     }
 }
+
 
 void print(vector<int> &arr) {
     for (int i = 0; i < arr.size(); i++) {
