@@ -67,7 +67,8 @@
         "thread": "cpp",
         "typeindex": "cpp",
         "typeinfo": "cpp",
-        "valarray": "cpp"
+        "valarray": "cpp",
+        "queue": "cpp"
     },
     "[python]": {
         "editor.defaultFormatter": "ms-python.python"

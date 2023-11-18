@@ -1,3 +1,13 @@
+// /*
+// queue::empty()	O(1)
+// queue::size()	O(1)
+// queue::emplace()	O(1)
+// queue::front()	O(1)
+// queue::back()	O(1)
+// queue::push(g) 	O(1)
+// queue::pop() 	O(1)
+// */
+
 #include <iostream>
 #include <queue>
 
