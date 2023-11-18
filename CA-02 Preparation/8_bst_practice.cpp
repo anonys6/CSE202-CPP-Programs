@@ -49,6 +49,38 @@ Node* serach_node(Node* root, int val) {
     }
 }
 
+Node* find_minimum(Node* root) {
+    if (root->left == NULL) {
+        return root;
+    }
+
+    return find_minimum(root->left);
+}
+
+Node* delete_node(Node* root, int val) {
+    if (root == NULL) {
+        cout << "Element not found";
+        return NULL;
+    } else if (val < root->data) {
+        root->left = delete_node(root->left, val);
+    } else if (val > root->data) {
+        root->right = delete_node(root->right, val);
+    } else {
+        if (root->left == NULL && root->right == NULL) {
+            root == NULL;
+        } else if (root->left == NULL) {
+            root = root->right;
+        } else if (root->right == NULL) {
+            root = root->left;
+        } else {
+            Node* temp = find_minimum(root->right);
+            root->data = temp->data;
+            root->right = delete_node(root->right, temp->data);
+        }
+    }
+    return root;
+}
+
 void pre_order (Node* root) {
     if (root == NULL) {
         return ;
@@ -101,6 +133,7 @@ int main() {
 #endif
 
     Node* root = NULL;
+    Node* del;
 
     root = create_node(3);
     insert_node(root, 5);
@@ -114,6 +147,8 @@ int main() {
     
     cout << find_largest(root)->data << endl;
     cout << find_smallest(root)->data << endl;
+
+    del = delete_node(root, 4);
 
     return 0;
 }

@@ -4,3 +4,4 @@
 Largest element: 7
 Smallest element: 1
 Not found
+1 2 5 7 
