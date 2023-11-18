@@ -1,7 +1,7 @@
-2 1 4 5 7 
-1 2 4 5 7 
-1 7 5 4 2 
-Largest element: 7
-Smallest element: 1
-Not found
-1 2 5 7 
+6 3 4 9 7 
+3 4 6 7 9 
+4 3 7 9 6 
+Largest element: 9
+Smallest element: 3
+Found
+3 6 7 9 

@@ -8,8 +8,21 @@ struct Node {
     Node* right;
 };
 
+// Node* create_node(int val) {
+//     // Node* newNode = (Node*) malloc(sizeof(Node));
+//     Node* newNode = new Node();
+
+//     if (!newNode) {
+//         return 0;
+//     } else {
+//         newNode->data = val;
+//         newNode->left = NULL;
+//         newNode->right = NULL;
+//         return newNode;
+//     }
+// }
+
 Node* create_node(int val) {
-    // Node* newNode = (Node*) malloc(sizeof(Node));
     Node* newNode = new Node();
 
     if (!newNode) {
@@ -18,12 +31,26 @@ Node* create_node(int val) {
         newNode->data = val;
         newNode->left = NULL;
         newNode->right = NULL;
-        return newNode;
     }
+    return newNode;
 }
 
+// Node* insert_node(Node* root, int val) {
+//     if(root == NULL) {
+//         return create_node(val);
+//     } else {
+//         if (val < root->data) {
+//             root->left = insert_node(root->left, val);
+//         } else {
+//             root->right = insert_node(root->right, val);
+//         }
+//     }
+//     return root;
+// }
+
+
 Node* insert_node(Node* root, int val) {
-    if(root == NULL) {
+    if (root == NULL) {
         return create_node(val);
     } else {
         if (val < root->data) {
@@ -31,9 +58,16 @@ Node* insert_node(Node* root, int val) {
         } else {
             root->right = insert_node(root->right, val);
         }
+        return root;
     }
-    return root;
 }
+
+// Node* find_largest(Node* root) {
+//     if (root == NULL || root->right == NULL) {
+//         return root;
+//     }
+//     find_largest(root->right);
+// }
 
 Node* find_largest(Node* root) {
     if (root == NULL || root->right == NULL) {
@@ -42,6 +76,13 @@ Node* find_largest(Node* root) {
     find_largest(root->right);
 }
 
+// Node* find_smallest(Node* root) {
+//     if (root == NULL || root->left == NULL) {
+//         return root;
+//     }
+//     find_smallest(root->left);
+// }
+
 Node* find_smallest(Node* root) {
     if (root == NULL || root->left == NULL) {
         return root;
@@ -49,11 +90,23 @@ Node* find_smallest(Node* root) {
     find_smallest(root->left);
 }
 
+// Node* search(Node* root, int val) {
+//     if (root == NULL || root->data == val) {
+//         return root;
+//     }
+    
+//     if (val < root->data) {
+//         return search(root->left, val);
+//     } else {
+//         return search(root->right, val);
+//     }
+// }
+
 Node* search(Node* root, int val) {
     if (root == NULL || root->data == val) {
         return root;
     }
-    
+
     if (val < root->data) {
         return search(root->left, val);
     } else {
@@ -61,17 +114,16 @@ Node* search(Node* root, int val) {
     }
 }
 
-Node* find_minimum(Node* root) {
-    if (root->left == NULL) {
-        return root;
-    }
-
-    return find_minimum(root->left);
-}
+// Node* find_minimum(Node* root) {
+//     if (root->left == NULL) {
+//         return root;
+//     }
+//     return find_minimum(root->left);
+// }
 
 // Node* delete_node(Node* root, int val) {
 //     if (root == NULL) {
-//         cout << "Element not found";
+//         cout << "Element not found" << endl;
 //         return NULL;
 //     } else if (val < root->data) {
 //         root->left = delete_node(root->left, val);
@@ -79,7 +131,7 @@ Node* find_minimum(Node* root) {
 //         root->right = delete_node(root->right, val);
 //     } else {
 //         if (root->left == NULL && root->right == NULL) {
-//             root == NULL;
+//             root = NULL;
 //         } else if (root->left == NULL) {
 //             root = root->right;
 //         } else if (root->right == NULL) {
@@ -92,6 +144,13 @@ Node* find_minimum(Node* root) {
 //     }
 //     return root;
 // }
+
+Node* find_minimum(Node* root) {
+    if (root->left == NULL) {
+        return root;
+    }
+    return find_minimum(root->left);
+}
 
 Node* delete_node(Node* root, int val) {
     if (root == NULL) {
@@ -115,7 +174,6 @@ Node* delete_node(Node* root, int val) {
         }
     }
 }
-
 
 
 
@@ -187,7 +245,9 @@ int main() {
         cout << "Found" << endl;
     }
 
-    del = delete_node(root, 4);
+    cin >> val;
+
+    del = delete_node(root, val);
     in_order(root);
     cout << endl;
 
