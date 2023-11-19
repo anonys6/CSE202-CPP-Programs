@@ -1,3 +1,2 @@
 
-
-    while(temp != NULL) {
+}
