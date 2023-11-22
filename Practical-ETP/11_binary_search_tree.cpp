@@ -176,7 +176,6 @@ Node* delete_node(Node* root, int val) {
 }
 
 
-
 void pre_order(Node* root) {
     if (root == NULL) {
         return ;
