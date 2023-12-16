@@ -13,7 +13,10 @@ int main() {
     freopen("output.txt", "w", stdout);
 #endif
 
-    
+    int x, y;
+    cin >> x >> y;
+
+    cout << x * y;
 
     return 0;
 }
