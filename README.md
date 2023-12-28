@@ -36,6 +36,4 @@ Contributing
 Contributions are welcome. Please open an issue to discuss your idea or submit a pull request.
 
 License
-This project is open source and available under the MIT License.
-
-Please replace [MIT License](LICENSE) with the link to your actual license file if it's not named LICENSE.
+This project is open source and available under the [MIT License](LICENSE).
