@@ -1,16 +1,14 @@
-#include <stdio.h>
-
-int main(){
-	int x, y;
-	
-	printf("Enter values of x and y: ");
-	scanf("%d %d", &x, &y);
-	
-	int temp = x;
-	x = y;
-	y = temp;
-	
-	printf("x=%d y=%d", x, y);
-	
+#include <iostream>
+int main()
+{
+	std::cout << "output : " << std::endl;
+	for (int i = 11; i < 15; ++i)
+	{
+		if (i % 2 == 0)
+		{
+			continue;
+		}
+		std::cout << i << std::endl;
+	}
 	return 0;
 }
