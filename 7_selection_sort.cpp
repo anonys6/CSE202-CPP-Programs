@@ -1,15 +1,11 @@
-void selectionSort(int arr[], int n)
-{
-    for (int i = 0; i < n - 1; i++)
-    {
+void selectionSort(int arr[], int n) {
+    for (int i = 0; i < n - 1; i++) {
 
         int tempMinIdx = i;
 
-        for (int j = i + 1; j < n; j++)
-        {
+        for (int j = i + 1; j < n; j++) {
 
-            if (arr[j] < arr[tempMinIdx])
-            {
+            if (arr[j] < arr[tempMinIdx]) {
                 tempMinIdx = j;
             }
         }

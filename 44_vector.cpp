@@ -1,6 +1,6 @@
+#include <algorithm>
 #include <iostream>
 #include <vector>
-#include <algorithm>
 
 using namespace std;
 
@@ -14,11 +14,11 @@ void print(vector<int> v) {
 int main() {
     int n, val;
 
-    vector <int> vec;
+    vector<int> vec;
 
     cin >> n;
 
-    for(int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++) {
         cin >> val;
         vec.push_back(val);
     }
@@ -33,5 +33,4 @@ int main() {
     print(vec);
 
     return 0;
-
 }

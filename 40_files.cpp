@@ -1,5 +1,5 @@
-#include <iostream>
 #include <fstream>
+#include <iostream>
 
 using namespace std;
 
@@ -10,7 +10,7 @@ int main() {
 
     fout.open("40_files_of.txt");
 
-    while(fout) {
+    while (fout) {
         getline(cin, line);
 
         if (line == "-1") {
@@ -31,6 +31,6 @@ int main() {
     }
 
     fin.close();
-    
+
     return 0;
 }

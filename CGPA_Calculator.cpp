@@ -55,7 +55,6 @@
 
 // }
 
-
 #include <iostream>
 #include <vector>
 
@@ -84,7 +83,7 @@ int main() {
 
     int credit_product = 0;
 
-    for (auto curr: course) {
+    for (auto curr : course) {
         if (curr.first == "O") {
             credit_product = credit_product + (curr.second * 10);
         } else if (curr.first == "A+") {

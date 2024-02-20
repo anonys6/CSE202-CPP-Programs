@@ -3,20 +3,15 @@
 using namespace std;
 
 class A {
-    public:
+  public:
     int a = 10;
-}
+};
 
 class B {
-    public:
+  public:
     int a = 20;
 };
 
-class C 
-}
+class C {};
 
-int main()
-{
-
-    return 0;
-}
+int main() { return 0; }

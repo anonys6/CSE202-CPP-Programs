@@ -1,25 +1,21 @@
-#include <iostream>
-#include <vector>
 #include <algorithm>
+#include <iostream>
 #include <sstream>
+#include <vector>
 
 using namespace std;
 
-int maximumArea(vector<int> &height)
-{
+int maximumArea(vector<int> &height) {
     int max_area = 0;
-    for (int i = 0; i < height.size(); i++)
-    {
-        for (int j = i + 1; j < height.size(); j++)
-        {
+    for (int i = 0; i < height.size(); i++) {
+        for (int j = i + 1; j < height.size(); j++) {
             max_area = max(max_area, min(height[i], height[j]) * (j - i));
         }
     }
     return max_area;
 }
 
-int main()
-{
+int main() {
     string input;
     cout << "height = ";
     getline(cin, input);
@@ -29,8 +25,7 @@ int main()
     vector<int> height;
     stringstream ss(input);
     string item;
-    while (getline(ss, item, ','))
-    {
+    while (getline(ss, item, ',')) {
         height.push_back(stoi(item));
     }
 

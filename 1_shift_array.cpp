@@ -12,18 +12,16 @@ int main() {
     }
 
     int rem;
-    cout << "\nWhat you want to remove? "<<endl;
-    cin>>rem;
+    cout << "\nWhat you want to remove? " << endl;
+    cin >> rem;
 
     for (int i = rem; i < arrSize; i++) {
         arr[i] = arr[i + 1];
     }
-
 
     cout << "\nAfter shifting: \n";
 
     for (int i = 0; i < sizeof(arr) / sizeof(arr[0]); i++) {
         cout << arr[i] << " ";
     }
-
 }

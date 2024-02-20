@@ -16,21 +16,18 @@ int main()
     //     cout << i << "  ";
     // }
 
-    for (int i = 0; i < num1.size(); i++)
-    {
+    for (int i = 0; i < num1.size(); i++) {
         cout << num1[i] << " ";
         cout << num1.at(i) << " ";
     }
 
     num1.push_back(6);
 
-    for (const int &i : num1)
-    {
+    for (const int &i : num1) {
         cout << i << " ";
     }
 
-    cout << endl
-         << "Print: " << num1[9] << num1.at(9);
+    cout << endl << "Print: " << num1[9] << num1.at(9);
 
     return 0;
 }

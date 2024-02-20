@@ -10,7 +10,7 @@ using namespace std;
 //     }
 // }
 
-int factorial (int n) {
+int factorial(int n) {
     if (n == 1 || n == 0) {
         return 1;
     } else {
@@ -66,14 +66,13 @@ string xPower(int n) {
 //     return myAns;
 // }
 
-int main()
-{
+int main() {
     // int num;
     // cout << "Enter a number: ";
     // cin >> num;
 
     // cout << sum(num);
     cout << xPower(4);
-    
+
     return 0;
 }

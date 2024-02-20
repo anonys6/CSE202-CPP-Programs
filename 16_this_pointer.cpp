@@ -2,14 +2,8 @@
 using namespace std;
 
 class A {
-    public:
-        static void fun() {
-            cout << "Fun";
-        }
+  public:
+    static void fun() { cout << "Fun"; }
 };
 
-
-int main()
-{
-    A::fun();
-}
+int main() { A::fun(); }

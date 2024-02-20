@@ -1,6 +1,12 @@
+#include <queue>
+#include <vector>
+#include <iostream>
+
+using namespace std;
+
 class Solution {
-public:
-    int countStudents(vector<int>& students, vector<int>& sandwiches) {
+  public:
+    int countStudents(vector<int> &students, vector<int> &sandwiches) {
         queue<int> stu;
         for (int student : students) {
             stu.push(student);
@@ -20,9 +26,19 @@ public:
                     stu.push(temp);
                     cnt++;
                 }
-                if (cnt == count) break;
+                if (cnt == count)
+                    break;
             }
         }
         return count;
     }
 };
+
+int main() {
+    vector<int> students = {1, 1, 0, 0};
+    vector<int> sandwiches = {0, 1, 0, 1};
+    Solution s;
+    int result = s.countStudents(students, sandwiches);
+    cout << "Remaining students: " << result << endl;
+    return 0;
+}

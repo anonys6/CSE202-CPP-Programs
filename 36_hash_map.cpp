@@ -3,9 +3,8 @@
 
 using namespace std;
 
-int main()
-{
-    map <int, string> m;
+int main() {
+    map<int, string> m;
 
     // m["hi"] = "one";
     m[1] = "one";
@@ -24,7 +23,7 @@ int main()
         cout << "Key is not present" << endl;
     }
 
-    for (auto curr: m) {
+    for (auto curr : m) {
         cout << curr.first << " " << curr.second << endl;
     }
 
@@ -32,11 +31,9 @@ int main()
 
     cout << "**************************" << endl << endl;
 
-    for (auto curr: m) {
+    for (auto curr : m) {
         cout << curr.first << " " << curr.second << endl;
     }
 
-
-    
     return 0;
 }

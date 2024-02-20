@@ -2,8 +2,7 @@
 
 using namespace std;
 
-int main()
-{
+int main() {
     string text = "hello world";
 
     char ans[12];
@@ -34,6 +33,6 @@ int main()
     }
 
     cout << ans << endl;
-    
+
     return 0;
 }

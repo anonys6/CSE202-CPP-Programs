@@ -1,9 +1,9 @@
 #include <iostream>
-#include <vector>
 #include <queue>
+#include <vector>
 using namespace std;
 
-int kthLargestSum(vector<int>& nums, int k) {
+int kthLargestSum(vector<int> &nums, int k) {
     priority_queue<int, vector<int>, greater<int>> pq;
 
     vector<int> sum(nums.size() + 1, 0);

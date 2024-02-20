@@ -17,13 +17,10 @@ int main() {
 
 long int fact(long int n) {
     if (n >= 1)
-        return n*fact(n-1);
+        return n * fact(n - 1);
     else
         return 1;
 }
-
-
-
 
 // #include <stdio.h>
 

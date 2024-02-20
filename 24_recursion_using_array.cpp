@@ -61,14 +61,14 @@ using namespace std;
 //     return -1;
 // }
 
-vector<int> allIndices (int arr[], int n, int si, int x) {
+vector<int> allIndices(int arr[], int n, int si, int x) {
 
     if (n == si) {
-        vector <int> v;
+        vector<int> v;
         return v;
     }
 
-    vector <int> smallAns = allIndices(arr, n, si + 1, x);
+    vector<int> smallAns = allIndices(arr, n, si + 1, x);
 
     if (arr[si] == x) {
         smallAns.insert(smallAns.begin(), si);
@@ -100,28 +100,26 @@ vector<int> allIndices (int arr[], int n, int si, int x) {
 
 // Return all the indices combination whose sum is equal to x
 vector<vector<int>> arraySumX(int arr[], int n, int si, int x) {
-  if (si == n) {
-    vector<vector<int>> ans;
-    return ans;
-  }
+    if (si == n) {
+        vector<vector<int>> ans;
+        return ans;
+    }
 
-  vector<vector<int>> smallAns = arraySumX(arr, n, si + 1, x);
+    vector<vector<int>> smallAns = arraySumX(arr, n, si + 1, x);
 
-  if (arr[si] == x) {
-    vector<int> v = {arr[si]};
-    smallAns.push_back(v);
-  }
+    if (arr[si] == x) {
+        vector<int> v = {arr[si]};
+        smallAns.push_back(v);
+    }
 
-  for (vector<int>& v : smallAns) {
-    v.push_back(arr[si]);
-  }
+    for (vector<int> &v : smallAns) {
+        v.push_back(arr[si]);
+    }
 
-  return smallAns;
+    return smallAns;
 }
 
-
-int main()
-{
+int main() {
     // int arr[5] = {2, 1, 3, 1, 4};
     // int x = 3;
 

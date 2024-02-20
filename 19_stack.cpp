@@ -1,8 +1,15 @@
+#include <iostream>
+#include <stack>
+#include <string>
+#include <vector>
+
+using namespace std;
+
 class Solution {
-public:
-    int calPoints(vector<string>& operations) {
-        stack <int> score;
-        
+  public:
+    int calPoints(vector<string> &operations) {
+        stack<int> score;
+
         for (int i = 0; i < operations.size(); i++) {
             if (isdigit(operations[i][0]) || operations[i][0] == '-') {
                 score.push(stoi(operations[i]));
@@ -21,7 +28,7 @@ public:
         }
 
         int sum = 0;
-        while(!score.empty()) {
+        while (!score.empty()) {
             sum += score.top();
             score.pop();
         }
@@ -29,3 +36,13 @@ public:
         return sum;
     }
 };
+
+int main() {
+    // Test the calPoints function
+    Solution solution;
+    vector<string> operations = {"5", "2", "C", "D", "+"};
+    int result = solution.calPoints(operations);
+    cout << "Result: " << result << endl;
+
+    return 0;
+}

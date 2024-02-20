@@ -3,8 +3,7 @@ using std::cin;
 using std::cout;
 
 // Structure of the node of a singly linked list
-typedef struct node
-{
+typedef struct node {
     int data;
     node *next;
 } node;
@@ -21,8 +20,7 @@ node *Concatenate(node *head1, node *head2);
 int Search(node *head, int element);
 void Traverse(node *head);
 
-int main()
-{
+int main() {
     node *head1 = new node;
     // Creating a head node of value 81
     head1 = Create(81);
@@ -61,8 +59,7 @@ int main()
 }
 
 // Function to create the head node (first node) of a singly linked list
-node *Create(int value)
-{
+node *Create(int value) {
     node *ptr = new node;
     ptr->data = value;
     ptr->next = NULL;
@@ -70,8 +67,7 @@ node *Create(int value)
 }
 
 // Function to insert a new node at the beginning of a singly linked list
-node *InsertAtBeg(node *head, int value)
-{
+node *InsertAtBeg(node *head, int value) {
     node *ptr = new node;
     ptr->data = value;
     ptr->next = head;
@@ -79,11 +75,10 @@ node *InsertAtBeg(node *head, int value)
     return head;
 }
 
-// Function to insert a new node at the specified position of a singly linked list
-node *InsertAtPos(node *head, int value, int position)
-{
-    if (position < 1)
-    {
+// Function to insert a new node at the specified position of a singly linked
+// list
+node *InsertAtPos(node *head, int value, int position) {
+    if (position < 1) {
         cout << "Invalid Position";
         return head;
     }
@@ -108,13 +103,11 @@ node *InsertAtPos(node *head, int value, int position)
 }
 
 // Function to insert a new node at the end of a singly linked list
-node *InsertAtEnd(node *head, int value)
-{
+node *InsertAtEnd(node *head, int value) {
     node *ptr1 = new node;
     ptr1 = head;
 
-    while (ptr1->next != NULL)
-    {
+    while (ptr1->next != NULL) {
         ptr1 = ptr1->next;
     }
     node *ptr2 = new node;
@@ -127,10 +120,8 @@ node *InsertAtEnd(node *head, int value)
 }
 
 // Function to delete a node from the beginning of a singly linked list
-node *DeleteAtBeg(node *head)
-{
-    if (head == NULL)
-    {
+node *DeleteAtBeg(node *head) {
+    if (head == NULL) {
         cout << "Underflow! Can't delete from empty list";
         return head;
     }
@@ -142,16 +133,13 @@ node *DeleteAtBeg(node *head)
 }
 
 // Function to delete a node from the specified position of a singly linked list
-node *DeleteAtPos(node *head, int position)
-{
-    if (head == NULL)
-    {
+node *DeleteAtPos(node *head, int position) {
+    if (head == NULL) {
         cout << "Underflow! Can't delete from empty list";
         return head;
     }
 
-    if (position < 1)
-    {
+    if (position < 1) {
         cout << "Invalid Position";
         return head;
     }
@@ -163,8 +151,7 @@ node *DeleteAtPos(node *head, int position)
     ptr1 = head;
 
     position--;
-    while (position > 1)
-    {
+    while (position > 1) {
         ptr1 = ptr1->next;
         position--;
     }
@@ -177,15 +164,12 @@ node *DeleteAtPos(node *head, int position)
 }
 
 // Function to delete a node from the end of a singly linked list
-node *DeleteAtEnd(node *head)
-{
-    if (head == NULL)
-    {
+node *DeleteAtEnd(node *head) {
+    if (head == NULL) {
         cout << "Underflow! Can't delete from empty list";
         return head;
     }
-    if (head->next == NULL)
-    {
+    if (head->next == NULL) {
         delete head;
         return NULL;
     }
@@ -204,13 +188,11 @@ node *DeleteAtEnd(node *head)
 }
 
 // Function to concatenate two singly linked lists
-node *Concatenate(node *head1, node *head2)
-{
+node *Concatenate(node *head1, node *head2) {
     node *ptr = new node;
     ptr = head1;
 
-    while (ptr->next != NULL)
-    {
+    while (ptr->next != NULL) {
         ptr = ptr->next;
     }
     ptr->next = head2;
@@ -218,13 +200,11 @@ node *Concatenate(node *head1, node *head2)
 }
 
 // Function to search for an element in a singly linked list
-int Search(node *head, int element)
-{
+int Search(node *head, int element) {
     node *ptr = new node;
     ptr = head;
     int position = 0;
-    while (ptr != NULL)
-    {
+    while (ptr != NULL) {
         position++;
         if (ptr->data == element)
             return position;
@@ -234,12 +214,10 @@ int Search(node *head, int element)
 }
 
 // Function to print a singly linked list from head node to tail node
-void Traverse(node *head)
-{
+void Traverse(node *head) {
     node *ptr = head;
     cout << "The linked list: ";
-    while (ptr != NULL)
-    {
+    while (ptr != NULL) {
         cout << ptr->data << " ";
         ptr = ptr->next;
     }

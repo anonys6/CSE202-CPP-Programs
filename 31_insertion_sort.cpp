@@ -24,8 +24,7 @@ void insertion_sort(int arr[], int n) {
     }
 }
 
-int main()
-{
+int main() {
     int arr[5] = {54, 12, 64, 42, 15};
 
     insertion_sort(arr, 5);
@@ -34,6 +33,6 @@ int main()
     for (int j = 0; j < 5; j++) {
         cout << arr[j] << " ";
     }
-    
+
     return 0;
 }

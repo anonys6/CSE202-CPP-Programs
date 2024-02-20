@@ -17,8 +17,7 @@ void push_front(Node **head_ref, int new_data) {
         while (temp->next != *head_ref)
             temp = temp->next;
         temp->next = new_node;
-    }
-    else {
+    } else {
         new_node->next = new_node;
     }
 
@@ -111,8 +110,7 @@ int main() {
 
     printList(head);
 
-    cout << endl
-         << "No of nodes in the CLL is " << countNodes(head) << endl;
+    cout << endl << "No of nodes in the CLL is " << countNodes(head) << endl;
 
     cin >> index >> val;
 
@@ -122,25 +120,10 @@ int main() {
 
     printList(head);
 
-    cout << endl
-         << "No of nodes in the CLL is " << countNodes(head) << endl;
+    cout << endl << "No of nodes in the CLL is " << countNodes(head) << endl;
 
     return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 #include <iostream>
 #include <string>
@@ -148,16 +131,16 @@ using namespace std;
 
 struct Node {
     int data;
-    Node* next;
+    Node *next;
 };
 
-void push_front(Node** head_ref, int new_data) {
-    Node* new_node = new Node();
+void push_front(Node **head_ref, int new_data) {
+    Node *new_node = new Node();
     new_node->data = new_data;
     new_node->next = *head_ref;
 
     if (*head_ref != NULL) {
-        Node* temp = *head_ref;
+        Node *temp = *head_ref;
         while (temp->next != *head_ref)
             temp = temp->next;
         temp->next = new_node;
@@ -167,7 +150,7 @@ void push_front(Node** head_ref, int new_data) {
     *head_ref = new_node;
 }
 
-void insertAtIndex(Node** head_ref, int index, int value) {
+void insertAtIndex(Node **head_ref, int index, int value) {
     if (index < 0 || (*head_ref == NULL && index > 0)) {
         cout << "Invalid position." << endl;
         return;
@@ -178,7 +161,7 @@ void insertAtIndex(Node** head_ref, int index, int value) {
         return;
     }
 
-    Node* current = *head_ref;
+    Node *current = *head_ref;
 
     for (int i = 0; current != NULL && i < index - 1; i++)
         current = current->next;
@@ -188,19 +171,19 @@ void insertAtIndex(Node** head_ref, int index, int value) {
         return;
     }
 
-    Node* new_node = new Node();
+    Node *new_node = new Node();
     new_node->data = value;
     new_node->next = current->next;
     current->next = new_node;
 }
 
-int countNodes(Node* head) {
+int countNodes(Node *head) {
     if (head == NULL)
         return 0;
 
     int count = 0;
 
-    Node* temp = head;
+    Node *temp = head;
 
     do {
         count++;
@@ -210,11 +193,11 @@ int countNodes(Node* head) {
     return count;
 }
 
-void printList(Node* head) {
+void printList(Node *head) {
     if (head == NULL)
         return;
 
-    Node* temp = head;
+    Node *temp = head;
 
     do {
         cout << "|" << temp->data << "| --> ";
@@ -231,37 +214,37 @@ int main() {
 
     getline(cin, str_val);
 
-    Node* head = NULL;
+    Node *head = NULL;
 
     for (int i = 0; i < n1; i++) {
         cin >> val;
         push_front(&head, val);
     }
 
-     if(head == NULL){
-         cout << "List is empty." << endl;
-         return 0;
-     }
+    if (head == NULL) {
+        cout << "List is empty." << endl;
+        return 0;
+    }
 
-     cin >> val;
+    cin >> val;
 
-     insertAtIndex(&head, countNodes(head)/2, val);
+    insertAtIndex(&head, countNodes(head) / 2, val);
 
-     cout << "After inserting at middle:" << endl;
+    cout << "After inserting at middle:" << endl;
 
-     printList(head);
+    printList(head);
 
-     cout << endl << "No of nodes in the CLL is " << countNodes(head) << endl;
+    cout << endl << "No of nodes in the CLL is " << countNodes(head) << endl;
 
-     cin >> index >> val;
+    cin >> index >> val;
 
-     insertAtIndex(&head, index - 1, val);
+    insertAtIndex(&head, index - 1, val);
 
-     cout << "After inserting at position:" << endl;
+    cout << "After inserting at position:" << endl;
 
-     printList(head);
+    printList(head);
 
-     cout << endl << "No of nodes in the CLL is " << countNodes(head) << endl;
+    cout << endl << "No of nodes in the CLL is " << countNodes(head) << endl;
 
-     return 0;
+    return 0;
 }

@@ -4,7 +4,7 @@ using namespace std;
 
 struct Node {
     int data;
-    Node* next;
+    Node *next;
 
     Node(int data) {
         this->data = data;
@@ -21,7 +21,8 @@ int main() {
     cout << first << " " << first->data << " " << first->next << endl;
 
     first->next = second;
-    cout << first << " " << first->next->data << " " << first->next->next << endl;
+    cout << first << " " << first->next->data << " " << first->next->next
+         << endl;
 
     // LInked list size
 

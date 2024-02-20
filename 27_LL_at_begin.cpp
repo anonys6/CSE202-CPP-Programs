@@ -2,39 +2,33 @@
 
 using namespace std;
 
-struct Node
-{
+struct Node {
     int data;
     Node *next;
 };
 
-void insert_at_begin(Node **head_ref, int val)
-{
+void insert_at_begin(Node **head_ref, int val) {
     Node *newNode = (Node *)malloc(sizeof(Node));
     newNode->data = val;
     newNode->next = *head_ref;
     *head_ref = newNode;
 }
 
-void print_list(Node *head)
-{
+void print_list(Node *head) {
     Node *temp = head;
-    while (temp != NULL)
-    {
+    while (temp != NULL) {
         cout << temp->data << " ";
         temp = temp->next;
     }
 }
 
-int main()
-{
+int main() {
     int n;
     cin >> n;
 
     Node *head = NULL;
 
-    for (int i = 0; i < n; i++)
-    {
+    for (int i = 0; i < n; i++) {
         int val;
         cin >> val;
         insert_at_begin(&head, val);
@@ -45,38 +39,33 @@ int main()
     return 0;
 }
 
-void insert_val_at_pos(Node **head_ref, int val, int pos)
-{
+void insert_val_at_pos(Node **head_ref, int val, int pos) {
     Node *newNode = (Node *)malloc(sizeof(Node));
     newNode->data = val;
     newNode->next = NULL;
 
-    if (pos == 0)
-    {
+    if (pos == 0) {
         newNode->next = *head_ref;
         *head_ref = newNode;
         return;
     }
 
     Node *temp = *head_ref;
-    for (int i = 0; i < pos - 1; i++)
-    {
+    for (int i = 0; i < pos - 1; i++) {
         temp = temp->next;
     }
     newNode->next = temp->next;
     temp->next = newNode;
 }
 
-void in_middle(Node **head_ref, int val, int pos)
-{
+void in_middle(Node **head_ref, int val, int pos) {
     Node *newNode = (Node *)malloc(sizeof(Node));
 
     Node *current = *head_ref;
 
     newNode->data = val;
 
-    for (int i = 1; i < pos - 1; i++)
-    {
+    for (int i = 1; i < pos - 1; i++) {
         current = current->next;
     }
 
@@ -86,15 +75,10 @@ void in_middle(Node **head_ref, int val, int pos)
     newNode->next = current->next->next;
 }
 
-void print_list(Node *head)
-{
-
-    Node
-        temp = head;
-    while (temp != NULL)
-    {
+void print_list(Node *head) {
+    Node *temp = head;
+    while (temp != NULL) {
         cout << temp->data << " ";
-
         temp = temp->next;
     }
 }

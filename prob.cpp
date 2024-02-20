@@ -2,42 +2,34 @@
 #include <string>
 using namespace std;
 
-struct Node
-{
+struct Node {
     int data;
     Node *next;
 };
 
-void push_back(Node **head_ref, int new_data)
-{
+void push_back(Node **head_ref, int new_data) {
     Node *new_node = new Node();
     new_node->data = new_data;
     new_node->next = *head_ref;
 
-    if (*head_ref != NULL)
-    {
+    if (*head_ref != NULL) {
         Node *temp = *head_ref;
         while (temp->next != *head_ref)
             temp = temp->next;
         temp->next = new_node;
-    }
-    else
-    {
+    } else {
         new_node->next = new_node;
         *head_ref = new_node;
     }
 }
 
-void insertAtIndex(Node **head_ref, int index, int value)
-{
-    if (index < 0 || (*head_ref == NULL && index > 0))
-    {
+void insertAtIndex(Node **head_ref, int index, int value) {
+    if (index < 0 || (*head_ref == NULL && index > 0)) {
         cout << "Invalid position." << endl;
         return;
     }
 
-    if (index == 0)
-    {
+    if (index == 0) {
         push_back(head_ref, value);
         return;
     }
@@ -47,8 +39,7 @@ void insertAtIndex(Node **head_ref, int index, int value)
     for (int i = 0; current != NULL && i < index - 1; i++)
         current = current->next;
 
-    if (current == NULL)
-    {
+    if (current == NULL) {
         cout << "Invalid position." << endl;
         return;
     }
@@ -59,8 +50,7 @@ void insertAtIndex(Node **head_ref, int index, int value)
     current->next = new_node;
 }
 
-int countNodes(Node *head)
-{
+int countNodes(Node *head) {
     if (head == NULL)
         return 0;
 
@@ -68,8 +58,7 @@ int countNodes(Node *head)
 
     Node *temp = head;
 
-    do
-    {
+    do {
         count++;
         temp = temp->next;
     } while (temp != head);
@@ -77,22 +66,19 @@ int countNodes(Node *head)
     return count;
 }
 
-void printList(Node *head)
-{
+void printList(Node *head) {
     if (head == NULL)
         return;
 
     Node *temp = head;
 
-    do
-    {
+    do {
         cout << "|" << temp->data << "| --> ";
         temp = temp->next;
     } while (temp != head);
 }
 
-int main()
-{
+int main() {
     int n1, n2, val, index;
 
     cin >> n1;
@@ -103,14 +89,12 @@ int main()
 
     Node *head = NULL;
 
-    for (int i = 0; i < n1; i++)
-    {
+    for (int i = 0; i < n1; i++) {
         cin >> val;
         push_back(&head, val);
     }
 
-    if (head == NULL)
-    {
+    if (head == NULL) {
         cout << "List is empty." << endl;
         return 0;
     }
@@ -123,8 +107,7 @@ int main()
 
     printList(head);
 
-    cout << endl
-         << "No of nodes in the CLL is " << countNodes(head) << endl;
+    cout << endl << "No of nodes in the CLL is " << countNodes(head) << endl;
 
     cin >> index >> val;
 
@@ -134,10 +117,7 @@ int main()
 
     printList(head);
 
-    cout << endl
-         << "No of nodes in the CLL is " << countNodes(head) << endl;
+    cout << endl << "No of nodes in the CLL is " << countNodes(head) << endl;
 
     return 0;
 }
-
-

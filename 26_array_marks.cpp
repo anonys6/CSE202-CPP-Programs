@@ -2,8 +2,7 @@
 
 using namespace std;
 
-int main()
-{
+int main() {
     int n, m;
     cin >> n >> m;
 
@@ -24,13 +23,13 @@ int main()
         // cout << endl;
         cout << "Average Student " << i << ": " << sum / m << endl;
     }
-    
+
     return 0;
 }
 
 /*
 INPUT
-3 
+3
 4
 80 90 75 85
 90 85 95 92

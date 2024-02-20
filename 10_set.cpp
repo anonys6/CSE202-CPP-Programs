@@ -3,10 +3,9 @@
 
 using namespace std;
 
-int main()
-{
-    set <int> s;
-    
+int main() {
+    set<int> s;
+
     s.insert(1);
     s.insert(2);
     s.insert(3);
@@ -15,6 +14,6 @@ int main()
     for (auto i : s) {
         cout << i << endl;
     }
-    
+
     return 0;
 }

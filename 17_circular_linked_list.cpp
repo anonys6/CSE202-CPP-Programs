@@ -77,12 +77,3 @@ int main() {
 }
 
 
-Complex operator- (Complex x, Complex y)
-{
-    Complex temp;
-    temp.a = x.a - y.a;
-    temp.b = x.b - y.b;
-    return temp;
-}
-
-
