@@ -16,6 +16,9 @@ int main() {
     // sort( vec.begin(), vec.end() );
     // vec.erase( unique( vec.begin(), vec.end() ), vec.end() );
 
+    // set<int> s(vec.begin(), vec.end());
+    // vec.assign(s.begin(), s.end());
+
     set<int> s(vec.begin(), vec.end());
     vec.assign(s.begin(), s.end());
 
@@ -23,6 +26,8 @@ int main() {
     for (int i = 0; i < vec.size(); i++) {
         cout << vec[i] << " ";
     }
+
+    cout << endl;
 
     return 0;
 }
