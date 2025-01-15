@@ -38,6 +38,7 @@ int main() {
     cout << "Sorted vector: ";
     print(temp);
 
+    // this approach requires vector to be sorted
     temp.erase(unique(temp.begin(), temp.end()), temp.end());
     cout << "Unique element (sorted vector): ";
     print(temp);
